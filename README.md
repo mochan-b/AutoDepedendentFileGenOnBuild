@@ -20,7 +20,7 @@ The project structure is that `XMLData` converts `input.txt` to `data.xml` which
 
 To run `XMLData` and then copy data.xml to `XMLMain` project directory, the following post build script works.
 
-    ```bat
+    ```dos
     $(TargetPath)
     copy /y $(TargetDir)data.xml $(SolutionDir)XMLMain
     ```
