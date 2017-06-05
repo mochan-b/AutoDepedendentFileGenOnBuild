@@ -20,6 +20,7 @@ The project structure is that `XMLData` converts `input.txt` to `data.xml` which
 
 To run `XMLData` and then copy data.xml to `XMLMain` project directory, the following post build script works.
 
+    ```bat
     $(TargetPath)
     copy /y $(TargetDir)data.xml $(SolutionDir)XMLMain
 
@@ -58,6 +59,7 @@ We’d like to make a little bit nicer build error so that someone building the 
 
 The following code outputs a custom error message.
 
+    ```bat
     $(TargetPath)
 
     if %ERRORLEVEL% == 0 (goto copyxml) ELSE (goto showerror)
