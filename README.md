@@ -23,6 +23,7 @@ To run `XMLData` and then copy data.xml to `XMLMain` project directory, the foll
     ```bat
     $(TargetPath)
     copy /y $(TargetDir)data.xml $(SolutionDir)XMLMain
+    ```
 
 This works fine until there is an error in `XMLData` and it won't pick up the error. It will show the exception in the output but thinks the build process went successfully.
 
@@ -41,6 +42,7 @@ In batch files, you query the return value of the last program using `%ERRORLEVE
 
 A strange side effect of querying the error-level is that now Visual Studio thinks the post-build step failed with the `MSB3073` error. If you don't query for the error-level, Visual Studio thinks everything is fine. As soon as you query for it, it produces an error. The following code would produce an error when `XMLData` throws an exception.
 
+    ```bat
     $(TargetPath)
     if %ERRORLEVEL% == 0 (goto copyxml) ELSE (goto end)
 
@@ -48,6 +50,7 @@ A strange side effect of querying the error-level is that now Visual Studio thin
     copy /y $(TargetDir)data.xml $(SolutionDir)XMLMain
 
     :end
+    ```
 
 ![Build Error MSB3073](img/MSB3073Error.png "Build Error MSB3073")
 
@@ -72,6 +75,7 @@ The following code outputs a custom error message.
     copy /y $(TargetDir)data.xml $(SolutionDir)XMLMain
 
     :end
+    ```
 
 It still throws the MSB3073 error in the error log and I can't seem to get rid of it by resetting the error-level.
 
