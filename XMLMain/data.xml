@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ArrayOfSalaryData xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <SalaryData FirstName="Alice" LastName="Adams" Salary="100" />
+  <SalaryData FirstName="Bob" LastName="Banner" Salary="95" />
+  <SalaryData FirstName="Chris" LastName="Cain" Salary="75" />
+  <SalaryData FirstName="Dan" LastName="Donner" Salary="120" />
+  <SalaryData FirstName="Emma" LastName="Ester" Salary="75" />
+</ArrayOfSalaryData>
