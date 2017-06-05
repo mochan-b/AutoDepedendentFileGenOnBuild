@@ -10,11 +10,10 @@ using static XMLData.XMLData;
 
 namespace XMLMain
 {
-    class XMLMain
+    public class XMLMain
     {
-        static void Main(string[] args)
+        public static List<SalaryData> loadData()
         {
-            // Salary data
             List<SalaryData> data = new List<SalaryData>();
 
             // Read the XML data and output the data
@@ -22,6 +21,15 @@ namespace XMLMain
             var serializer = new XmlSerializer(data.GetType());
             data = serializer.Deserialize(reader) as List<SalaryData>;
             reader.Close();
+
+            return data;
+        }
+
+        static void Main(string[] args)
+        {
+            // Load the salary data and display it
+            List<SalaryData> data = loadData();
+
             foreach (var datum in data)
                 Console.WriteLine(datum);
         }

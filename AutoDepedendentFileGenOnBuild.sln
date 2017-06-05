@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLData", "XMLData\XMLData.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLMain", "XMLMain\XMLMain.csproj", "{CC1C71FF-03DD-4FBC-B740-60F362D9C82A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XMLMainTests", "XMLMainTests\XMLMainTests.csproj", "{F500A9A1-D32F-45D7-AA00-F38B7EB5F73E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{CC1C71FF-03DD-4FBC-B740-60F362D9C82A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CC1C71FF-03DD-4FBC-B740-60F362D9C82A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CC1C71FF-03DD-4FBC-B740-60F362D9C82A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F500A9A1-D32F-45D7-AA00-F38B7EB5F73E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F500A9A1-D32F-45D7-AA00-F38B7EB5F73E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F500A9A1-D32F-45D7-AA00-F38B7EB5F73E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F500A9A1-D32F-45D7-AA00-F38B7EB5F73E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
