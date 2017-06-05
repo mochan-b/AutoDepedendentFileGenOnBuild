@@ -20,10 +20,10 @@ The project structure is that `XMLData` converts `input.txt` to `data.xml` which
 
 To run `XMLData` and then copy data.xml to `XMLMain` project directory, the following post build script works.
 
-    ```dos
-    $(TargetPath)
-    copy /y $(TargetDir)data.xml $(SolutionDir)XMLMain
-    ```
+```dos
+$(TargetPath)
+copy /y $(TargetDir)data.xml $(SolutionDir)XMLMain
+```
 
 This works fine until there is an error in `XMLData` and it won't pick up the error. It will show the exception in the output but thinks the build process went successfully.
 
