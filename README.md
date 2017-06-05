@@ -20,7 +20,7 @@ The project structure is that `XMLData` converts `input.txt` to `data.xml` which
 
 To run `XMLData` and then copy data.xml to `XMLMain` project directory, the following post build script works.
 
-```dos
+```bat
 $(TargetPath)
 copy /y $(TargetDir)data.xml $(SolutionDir)XMLMain
 ```
@@ -42,15 +42,15 @@ In batch files, you query the return value of the last program using `%ERRORLEVE
 
 A strange side effect of querying the error-level is that now Visual Studio thinks the post-build step failed with the `MSB3073` error. If you don't query for the error-level, Visual Studio thinks everything is fine. As soon as you query for it, it produces an error. The following code would produce an error when `XMLData` throws an exception.
 
-    ```bat
-    $(TargetPath)
-    if %ERRORLEVEL% == 0 (goto copyxml) ELSE (goto end)
+```bat
+$(TargetPath)
+if %ERRORLEVEL% == 0 (goto copyxml) ELSE (goto end)
 
-    :copyxml
-    copy /y $(TargetDir)data.xml $(SolutionDir)XMLMain
+:copyxml
+copy /y $(TargetDir)data.xml $(SolutionDir)XMLMain
 
-    :end
-    ```
+:end
+```
 
 ![Build Error MSB3073](img/MSB3073Error.png "Build Error MSB3073")
 
@@ -62,20 +62,20 @@ We’d like to make a little bit nicer build error so that someone building the 
 
 The following code outputs a custom error message.
 
-    ```bat
-    $(TargetPath)
+```bat
+$(TargetPath)
 
-    if %ERRORLEVEL% == 0 (goto copyxml) ELSE (goto showerror)
+if %ERRORLEVEL% == 0 (goto copyxml) ELSE (goto showerror)
 
-    :showerror
-    echo  XMLData.cs : error XMLData001: Exception thrown by XMLData.
-    goto end
+:showerror
+echo  XMLData.cs : error XMLData001: Exception thrown by XMLData.
+goto end
 
-    :copyxml
-    copy /y $(TargetDir)data.xml $(SolutionDir)XMLMain
+:copyxml
+copy /y $(TargetDir)data.xml $(SolutionDir)XMLMain
 
-    :end
-    ```
+:end
+```
 
 It still throws the MSB3073 error in the error log and I can't seem to get rid of it by resetting the error-level.
 
